@@ -1,5 +1,5 @@
 import $ from "jquery";
-$(document).ready(function(){
+document.addEventListener('DOMContentLoaded', function() {
     const contents= ["Holberton Dashboard","Dashboard data for the students","Copyright - Holberton School"];
     contents.forEach(content => {
         const paragraph = $("<p>").text(content);
