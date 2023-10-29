@@ -6,4 +6,3 @@ $(document).ready(function(){
         $("body").append(paragraph);
         });
 })
-
