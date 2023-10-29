@@ -1,8 +1,6 @@
-import $ from "jquery";
-$(document).ready(function(){
-    const contents= ["Holberton Dashboard","Dashboard data for the students","Copyright - Holberton School"];
-    contents.forEach(content => {
-        const paragraph = $("<p>").text(content);
-        $("body").append(paragraph);
-        });
-})
+'use strict';
+const $ = require('jquery');
+
+$('body').append('<p>Holberton Dashboard</p>');
+$('body').append('<p>Dashboard data for the students</p>');
+$('body').append('<p>Copyright - Holberton School</p>');
