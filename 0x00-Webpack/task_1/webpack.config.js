@@ -1,0 +1,19 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+
+module.exports = {
+    entry: {
+        main: path.resolve(__dirname, './js/dashboard_main.js'),
+      },
+      output: {
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'public')
+      },
+  plugins: [
+    
+    new HtmlWebpackPlugin({
+      title: "Webpack Task_1",
+    }),
+    
+  ],
+};
