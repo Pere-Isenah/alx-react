@@ -1,8 +1,6 @@
 import $ from "jquery";
 import _ from "lodash";
 
-
-
 $(document).ready(function(){
     $("body").append("<p>Holberton Dashboard</p>")
     $("body").append("<p>Dashboard data for the students</p>")
@@ -12,12 +10,13 @@ $(document).ready(function(){
 
     let clickCount = 0;
 
-    $.fn.updateCounter = _.debounce(function(){
+    const updateCounter = ()=>{
 
-       this.click(function(){
+        $("button").click(()=>{
         clickCount++;
-        $("#count").text(clickCount)
+        $("#count").text(`${clickCount} clicks on the button`)
         
-    })},2000)
-    $("button").updateCounter()
+    })}
+    _.debounce(updateCounter, 500);
+    updateCounter()
 })
