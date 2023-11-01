@@ -18,6 +18,6 @@ $(document).ready(function(){
         clickCount++;
         $("#count").text(clickCount)
         
-    })},500)
+    })},2000)
     $("button").updateCounter()
 })
