@@ -1,23 +1,26 @@
 import logo from './holberton_Logo.jpg';
 import './App.css';
+import {getFullYear, getFooterCopy} from './utils.js';
+import { Notification } from './Notifications';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>
           School dashboard
         </h1>
-      </header>
-      <body className='App-body'>
+      </div>
+      <div className='App-body'>
         <p>Login to access the full dashboard</p>
-      </body>
-      <footer className='App-footer'>
-        <p>Copyright 2020 - holberton School</p>
-      </footer> 
+      </div>
+      <div className='App-footer'>
+        <p>Copyright {getFullYear()} - {getFooterCopy()}</p>
+      </div> 
     </div>
   );
 }
+React.render
 
 export default App;

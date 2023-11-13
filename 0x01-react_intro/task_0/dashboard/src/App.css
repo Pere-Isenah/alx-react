@@ -1,6 +1,4 @@
 /*logo style*/
-.App-logo {
-}
 
 /*hearder style*/
 .App-header {
@@ -8,13 +6,14 @@
   display: flex;
   align-items: center;
   /* font-size: calc(10px + 2vmin); */
+  font-size: 1.5rem;
 }
 
 /*body style*/
 .App-body{
-  border-top: 2px solid red;
-  border-bottom: 2px solid red;
-  height:100vh;
+  border-top: 3px solid red;
+  border-bottom: 3px solid red;
+  height:50vh;
 }
 
 /*footer style*/
