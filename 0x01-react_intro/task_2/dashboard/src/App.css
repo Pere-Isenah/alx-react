@@ -1,0 +1,22 @@
+/*logo style*/
+
+/*hearder style*/
+.App-header {
+  color: red;
+  display: flex;
+  align-items: center;
+  /* font-size: calc(10px + 2vmin); */
+  font-size: 1.5rem;
+}
+
+/*body style*/
+.App-body{
+  border-top: 3px solid red;
+  border-bottom: 3px solid red;
+  height:50vh;
+}
+
+/*footer style*/
+.App-footer{
+  text-align: center;
+}
