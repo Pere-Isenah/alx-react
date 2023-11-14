@@ -1,16 +1,29 @@
 import React from 'react';
 import './Notifications.css';
+import {getLatestNotification} from './utils'
 
 
-let d = {display: inline};
 
+let btnStyle = {position: 'absolute',
+         top : '1.5em',
+        right : '2.5em',
+        ariaLabel: 'close',
+        };
+let btnClick = function buttonMsg(){
+    console.log("Close button has been clicked")
+ }
  function Notifications(){
     return(
         <div className='notification'>
             <p>
             Here is the list of notifications
             </p>
-            <button style = {d}>x</button>
+            <ul>
+                <li data-priority= 'default'>New course available</li>
+                <li data-priority= 'urgent'>New resume available</li>
+                <li> dangeroulySetHtml{getLatestNotification}</li>
+            </ul>
+            <button onClick={btnClick} style = {btnStyle}>x</button>
         </div>
     )
 };
