@@ -1,7 +1,7 @@
 import logo from './holberton_Logo.jpg';
 import './App.css';
 import {getFullYear, getFooterCopy} from './utils.js';
-import { Notification } from './Notifications';
+import React from 'react';
 
 function App() {
   return (
@@ -21,6 +21,5 @@ function App() {
     </div>
   );
 }
-React.render
 
 export default App;

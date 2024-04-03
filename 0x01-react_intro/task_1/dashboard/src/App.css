@@ -1,0 +1,28 @@
+/*logo style*/
+
+/*hearder style*/
+.App-header {
+  color: #DC143c;
+  display: flex;
+  align-items: center;
+  /* font-size: calc(10px + 2vmin); */
+  font-size: 1.5rem;
+  border-bottom: 5px solid #DC143c;
+}
+
+/*body style*/
+.App-body{
+  height:50vh;
+  margin: 5em;
+}
+
+.App-body > label input,
+.App-body > button {
+  margin: 10px;
+}
+
+/*footer style*/
+.App-footer{
+  border-top: 5px solid #DC143c;
+  text-align: center;
+}
