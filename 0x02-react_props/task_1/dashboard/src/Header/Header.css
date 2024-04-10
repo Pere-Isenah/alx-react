@@ -1,0 +1,8 @@
+.App-header {
+    color: #DC143c;
+    display: flex;
+    align-items: center;
+    /* font-size: calc(10px + 2vmin); */
+    font-size: 1.5rem;
+    border-bottom: 5px solid #DC143c;
+  }
