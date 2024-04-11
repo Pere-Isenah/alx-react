@@ -17,11 +17,12 @@ describe('App component', () => {
     expect(headerComponent).toBeInTheDocument();
   });
 
-  test('contains the Login component', () => {
-    const { getByTestId } = render(<App />);
+  test('contains the Login component when isLoggedIn is false', () => {
+    const { getByTestId, queryByTestId } = render(<App />);
     const loginComponent = getByTestId('login');
 
     expect(loginComponent).toBeInTheDocument();
+    expect(queryByTestId('course-list')).not.toBeInTheDocument();
   });
 
   test('contains the Footer component', () => {
@@ -29,5 +30,21 @@ describe('App component', () => {
     const footerComponent = getByTestId('footer');
 
     expect(footerComponent).toBeInTheDocument();
+  });
+
+  describe('when isLoggedIn is true', () => {
+    test('does not contain the Login component', () => {
+      const { queryByTestId } = render(<App isLoggedIn={true} />);
+      const loginComponent = queryByTestId('login');
+
+      expect(loginComponent).not.toBeInTheDocument();
+    });
+
+    test('contains the CourseList component', () => {
+      const { getByTestId } = render(<App isLoggedIn={true} />);
+      const courseListComponent = getByTestId('course-list');
+
+      expect(courseListComponent).toBeInTheDocument();
+    });
   });
 });

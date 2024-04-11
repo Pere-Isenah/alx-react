@@ -2,6 +2,7 @@ import React from 'react';
 import './Notifications.css';
 import { getLatestNotification } from '../utils';
 import NotificationItem  from './NotificationItem';
+import propTypes from "./Prop-types"
 
 
 let btnStyle = {
@@ -15,8 +16,13 @@ let btnClick = function buttonMsg() {
   console.log('Close button has been clicked');
 };
 
-function Notifications() {
+function Notifications({displayDrawer}) {
   return (
+    <div className="menuItem">
+      Your notifications
+    </div>
+    { !displayDrawer ? ( return
+    (
     <div className='notification'>
       <p>
         Here is the list of notifications
@@ -28,7 +34,15 @@ function Notifications() {
       </ul>
       <button onClick={btnClick} style={btnStyle}>x</button>
     </div>
+    ))}
   );
+}
+
+Notifications.propTypes={
+  displayDrawer: propTypes.bool
+}
+Notifications.defaultProps={
+displayDrawer: false,
 }
 
 export default Notifications;

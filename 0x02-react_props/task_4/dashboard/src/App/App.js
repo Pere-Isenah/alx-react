@@ -24,8 +24,6 @@ function App() {
         ) : (
           <Login onLogin={() => setIsLoggedIn(true)} />
         )}
-
-        <Login />
       </div>
       <div className='App-footer'>
         <Footer />
@@ -35,7 +33,7 @@ function App() {
   );
 }
 
-App.PropTypes={
+App.propTypes={
   isLogin: PropTypes.bool
 
 }
