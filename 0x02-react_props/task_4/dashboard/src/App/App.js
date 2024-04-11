@@ -5,9 +5,10 @@ import {Header} from '../Header/Header.js';
 import {Footer} from '../Footer/Footer.js';
 import {Login} from '../Login/Login.js';
 import PropTypes from "./Props-type";
-import CourseList from "../CourseList";
+import {CourseList} from "../CourseList";
+import { useState } from 'react';
 
-
+const [isLogIn,setLoginIn]=useState(false);
 
 function App() {
   return (
@@ -18,6 +19,12 @@ function App() {
         <Header />
       </div>
       <div className='App-body'>
+        {isLogIn ? (
+          <CourseList/>
+        ) : (
+          <Login onLogin={() => setIsLoggedIn(true)} />
+        )}
+
         <Login />
       </div>
       <div className='App-footer'>
@@ -26,6 +33,11 @@ function App() {
     </div>
     </>
   );
+}
+
+App.PropTypes={
+  isLogin: PropTypes.bool
+
 }
 
 export default App;
