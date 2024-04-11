@@ -1,0 +1,16 @@
+.notification {
+    border: 1px dashed red;
+    padding: 1em;
+    font-size: 1.5rem;
+    /* font-weight: 400; */
+}
+
+[data-notification-type="default"]{
+    color: blue;
+
+}
+
+[data-notification-type="urgent"]{
+    color: red;
+
+}
