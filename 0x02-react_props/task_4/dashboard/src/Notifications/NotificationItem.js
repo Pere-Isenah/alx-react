@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from "./Props-type";
+import PropTypes from "prop-types";
 
 
 function NotificationItem({ type, html, value }) {

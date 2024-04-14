@@ -1,10 +1,15 @@
-.notification {
+.notification{
     border: 1px dashed red;
-    padding: 1em;
+    padding: 0.6em 0.8em; 
     font-size: 1.5rem;
+    height: 38%;
+    width: 100%;
+    position: relative;
     /* font-weight: 400; */
 }
-
+.notification p{
+    margin: 15px 0;
+}
 [data-notification-type="default"]{
     color: blue;
 
@@ -13,4 +18,27 @@
 [data-notification-type="urgent"]{
     color: red;
 
+}
+.notification-con{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  position: absolute;
+  left: 65%;
+  top: 10%;
+
+}
+.menuItem{
+    font-weight: bold;
+    font-size: 1.3em;
+    /* text-align: right; */
+    margin-bottom: 0.5em;
+    margin-left: 20em;
+
+}
+.btnStyle{
+    position: absolute;
+    top: 2em;
+    right: 2.5em;
+    ariaLabel: close;
 }

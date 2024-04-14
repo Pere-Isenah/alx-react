@@ -1,5 +1,6 @@
 import logo from './holberton_Logo.jpg';
 import React from "react";
+import  "./Header.css";
 
 export const Header = () => {
     return(
