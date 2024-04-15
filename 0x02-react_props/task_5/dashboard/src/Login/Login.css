@@ -1,0 +1,11 @@
+/*body style*/
+.App-body{
+    height:50vh;
+    margin: 5em;
+  }
+  
+  .App-body > label input,
+  .App-body > button {
+    margin: 10px;
+  }
+  
