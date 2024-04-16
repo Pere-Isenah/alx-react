@@ -1,49 +1,31 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import NotificationItem from './NotificationItem';
+import Notifications from './Notifications';
 
-describe('NotificationItem component', () => {
-  test('renders without crashing', () => {
-    render(<NotificationItem />);
+describe('Notifications component', () => {
+  test('renders correctly with an empty array or without listNotifications property', () => {
+    const { getByText } = render(<Notifications />);
+    const noNotificationMessage = getByText('No new notification for now');
+    expect(noNotificationMessage).toBeInTheDocument();
   });
 
-  test('renders correct HTML when type and value props are passed', () => {
-    const { getByText } = render(
-      <NotificationItem type="default" value="test" />
-    );
-    const listItemElement = getByText(/test/i);
-    expect(listItemElement).toBeInTheDocument();
+  test('renders list of notifications correctly when listNotifications prop is passed', () => {
+    const listNotifications = [
+      { id: 1, type: "default", value: "New course available" },
+      { id: 2, type: "urgent", value: "New resume available" }
+    ];
+    const { getByText } = render(<Notifications listNotifications={listNotifications} />);
+    const courseNotification = getByText('New course available');
+    const resumeNotification = getByText('New resume available');
+    expect(courseNotification).toBeInTheDocument();
+    expect(resumeNotification).toBeInTheDocument();
   });
 
-  test('renders correct HTML when html prop is passed', () => {
-    const { container } = render(
-      <NotificationItem html={{ __html: '<u>test</u>' }} />
-    );
-    const listItemElement = container.querySelector('li');
-    expect(listItemElement).toContainHTML('<u>test</u>');
-  });
-
-  test('menu item is displayed when displayDrawer is false', () => {
-    const { queryByText } = render(<NotificationItem displayDrawer={false} />);
-    const menuItem = queryByText('Your notifications');
-    expect(menuItem).toBeInTheDocument();
-  });
-
-  test('div.Notifications is not displayed when displayDrawer is false', () => {
-    const { queryByTestId } = render(<NotificationItem displayDrawer={false} />);
-    const notificationsDiv = queryByTestId('notifications');
-    expect(notificationsDiv).not.toBeInTheDocument();
-  });
-
-  test('menu item is displayed when displayDrawer is true', () => {
-    const { queryByText } = render(<NotificationItem displayDrawer={true} />);
-    const menuItem = queryByText('Your notifications');
-    expect(menuItem).toBeInTheDocument();
-  });
-
-  test('div.Notifications is displayed when displayDrawer is true', () => {
-    const { queryByTestId } = render(<NotificationItem displayDrawer={true} />);
-    const notificationsDiv = queryByTestId('notifications');
-    expect(notificationsDiv).toBeInTheDocument();
+  test('renders message correctly when listNotifications is empty', () => {
+    const { getByText, queryByText } = render(<Notifications />);
+    const notificationMessage = getByText('No new notification for now');
+    const listNotificationMessage = queryByText('Here is the list of notifications');
+    expect(notificationMessage).toBeInTheDocument();
+    expect(listNotificationMessage).not.toBeInTheDocument();
   });
 });

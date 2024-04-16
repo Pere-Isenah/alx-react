@@ -7,14 +7,24 @@ describe('CourseList component', () => {
     render(<CourseList />);
   });
 
-  test('renders the 5 different rows', () => {
+  test('renders correctly with an empty array or without listCourses property', () => {
     const { getByText } = render(<CourseList />);
+    const noCourseMessage = getByText('No course available yet');
+    expect(noCourseMessage).toBeInTheDocument();
+  });
 
-    // Check if each row is rendered by looking for specific text content
-    expect(getByText('Header 1')).toBeInTheDocument();
-    expect(getByText('Header 2')).toBeInTheDocument();
-    expect(getByText('Data 1')).toBeInTheDocument();
-    expect(getByText('Data 2')).toBeInTheDocument();
-    expect(getByText('Data 3')).toBeInTheDocument();
+  test('renders list of courses correctly when listCourses prop is passed', () => {
+    const listCourses = [
+      { id: 1, name: 'ES6', credit: 60 },
+      { id: 2, name: 'Webpack', credit: 20 },
+      { id: 3, name: 'React', credit: 40 }
+    ];
+    const { getByText } = render(<CourseList listCourses={listCourses} />);
+    const courseES6 = getByText('ES6');
+    const courseWebpack = getByText('Webpack');
+    const courseReact = getByText('React');
+    expect(courseES6).toBeInTheDocument();
+    expect(courseWebpack).toBeInTheDocument();
+    expect(courseReact).toBeInTheDocument();
   });
 });
