@@ -11,8 +11,8 @@ let btnClick = function buttonMsg() {
   console.log('Close button has been clicked');
 };
 
-function Notifications({displayDrawer}) {
-  console.log(displayDrawer);
+function Notifications({displayDrawer,listNotifications}) {
+  
   return (
     <>
     <div className="notification-con">
@@ -36,7 +36,8 @@ function Notifications({displayDrawer}) {
    );}
 
 Notifications.propTypes={
-  displayDrawer: PropTypes.bool
+  displayDrawer: PropTypes.bool,
+  listNotifications: PropTypes.array
 }
 Notifications.defaultProps={
 displayDrawer: false,
