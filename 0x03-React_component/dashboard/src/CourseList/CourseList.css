@@ -1,0 +1,21 @@
+table {
+    border-collapse: separate;
+    /* border-spacing: 0.5em 0; */
+    width:80%;
+    height:50%;
+    font-weight: 500;
+    font-size: 2em;
+    border: 2px solid rgba(211,211,211,1);
+}
+
+th{
+    border-bottom: 3px solid rgba(211,211,211,1) ;
+    text-align: left;
+
+}
+
+th:first-child{
+    text-align: center;
+
+}
+
